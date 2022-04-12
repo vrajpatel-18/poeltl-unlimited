@@ -753,7 +753,6 @@ function init(){
         document.getElementById("modalHeader").innerText = "Who is this mystery player?";
         document.getElementById("playerImage").style.filter = "brightness(0%)";
         document.getElementById("playerImage").src = actual.img;
-        console.log(actual);
         setTimeout(function(){
             document.getElementById("message").style.opacity = "0";
             setTimeout(() => document.getElementById("message").remove(), 500);
