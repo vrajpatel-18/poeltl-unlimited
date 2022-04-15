@@ -55,6 +55,17 @@ hr {
   position: relative;
 }
 
+#playAgain{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .label-tile {
   /* Box */
   border: transparent;
