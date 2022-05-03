@@ -4,465 +4,489 @@ let scale = screen.width / siteWidth;
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
 
 const playerList = [
-    "Steven Adams",
-    "LaMarcus Aldridge",
-    "Kyle Anderson",
-    "Giannis Antetokounmpo",
-    "Carmelo Anthony",
-    "D.J. Augustin",
-    "Harrison Barnes",
-    "Will Barton",
-    "Nicolas Batum",
-    "Kent Bazemore",
-    "Bradley Beal",
-    "Malik Beasley",
-    "Davis Bertans",
-    "Patrick Beverley",
-    "Bismack Biyombo",
-    "Nemanja Bjelica",
-    "Eric Bledsoe",
-    "Bojan Bogdanovic",
-    "Devin Booker",
-    "Avery Bradley",
-    "Malcolm Brogdon",
-    "Jaylen Brown",
-    "Reggie Bullock",
-    "Trey Burke",
-    "Alec Burks",
-    "Jimmy Butler",
-    "Kentavious Caldwell-Pope",
-    "Clint Capela",
-    "Marquese Chriss",
-    "Mike Conley",
-    "Pat Connaughton",
-    "Robert Covington",
-    "Jae Crowder",
-    "Stephen Curry",
-    "Anthony Davis",
-    "Ed Davis",
-    "Dewayne Dedmon",
-    "DeMar DeRozan",
-    "Gorgui Dieng",
-    "Spencer Dinwiddie",
-    "Goran Dragic",
-    "Wayne Ellington",
-    "Joel Embiid",
-    "Derrick Favors",
-    "Dorian Finney-Smith",
-    "Bryn Forbes",
-    "Evan Fournier",
-    "Rudy Gay",
-    "Paul George",
-    "Taj Gibson",
-    "Rudy Gobert",
-    "Aaron Gordon",
-    "Eric Gordon",
-    "Jerami Grant",
-    "Danny Green",
-    "Draymond Green",
-    "Blake Griffin",
-    "Tim Hardaway Jr.",
-    "James Harden",
-    "Maurice Harkless",
-    "Montrezl Harrell",
-    "Gary Harris",
-    "Joe Harris",
-    "Tobias Harris",
-    "Udonis Haslem",
-    "Gordon Hayward",
-    "Juancho Hernangomez",
-    "Willy Hernangomez",
-    "Buddy Hield",
-    "George Hill",
-    "Jrue Holiday",
-    "Richaun Holmes",
-    "Rodney Hood",
-    "Al Horford",
-    "Danuel House Jr.",
-    "Dwight Howard",
-    "Serge Ibaka",
-    "Andre Iguodala",
-    "Brandon Ingram",
-    "Kyrie Irving",
-    "Reggie Jackson",
-    "LeBron James",
-    "Stanley Johnson",
-    "Nikola Jokic",
-    "Damian Jones",
-    "Derrick Jones Jr.",
-    "Tyus Jones",
-    "DeAndre Jordan",
-    "Cory Joseph",
-    "Jeremy Lamb",
-    "Zach LaVine",
-    "Jake Layman",
-    "Alex Len",
-    "Kawhi Leonard",
-    "Caris LeVert",
-    "Kevon Looney",
-    "Brook Lopez",
-    "Robin Lopez",
-    "Kyle Lowry",
-    "Timothe Luwawu-Cabarrot",
-    "Trey Lyles",
-    "Boban Marjanovic",
-    "Wesley Matthews",
-    "CJ McCollum",
-    "T.J. McConnell",
-    "Doug McDermott",
-    "Rodney McGruder",
-    "Ben McLemore",
-    "Khris Middleton",
-    "Patty Mills",
-    "Paul Millsap",
-    "Marcus Morris Sr.",
-    "Markieff Morris",
-    "Jamal Murray",
-    "Mike Muscala",
-    "Larry Nance Jr.",
-    "Raul Neto",
-    "Georges Niang",
-    "Nerlens Noel",
-    "Jusuf Nurkic",
-    "Victor Oladipo",
-    "Kelly Olynyk",
-    "Kelly Oubre Jr.",
-    "Chris Paul",
-    "Cameron Payne",
-    "Elfrid Payton",
-    "Mason Plumlee",
-    "Jakob Poeltl",
-    "Otto Porter Jr.",
-    "Bobby Portis",
-    "Dwight Powell",
-    "Norman Powell",
-    "Taurean Prince",
-    "Julius Randle",
-    "Josh Richardson",
-    "Austin Rivers",
-    "Rajon Rondo",
-    "Terrence Ross",
-    "Terry Rozier",
-    "Ricky Rubio",
-    "Domantas Sabonis",
-    "Dario Saric",
-    "Tomas Satoransky",
-    "Dennis Schroder",
-    "Pascal Siakam",
-    "Ben Simmons",
-    "Marcus Smart",
-    "Ish Smith",
-    "Tony Snell",
-    "Isaiah Thomas",
-    "Tristan Thompson",
-    "Karl-Anthony Towns",
-    "Myles Turner",
-    "Jonas Valanciunas",
-    "Fred VanVleet",
-    "Nikola Vucevic",
-    "Kemba Walker",
-    "T.J. Warren",
-    "Andrew Wiggins",
-    "Lou Williams",
-    "Justise Winslow",
-    "Thaddeus Young",
-    "Ivica Zubac",
-    "Damion Lee",
-    "Ryan Arcidiacono",
-    "Alex Caruso",
-    "David Nwaba",
-    "Bam Adebayo",
-    "Jarrett Allen",
-    "OG Anunoby",
-    "Lonzo Ball",
-    "Khem Birch",
-    "Bogdan Bogdanovic",
-    "Chris Boucher",
-    "Tony Bradley",
-    "Dillon Brooks",
-    "Thomas Bryant",
-    "John Collins",
-    "De'Aaron Fox",
-    "Markelle Fultz",
-    "Josh Hart",
-    "Frank Jackson",
-    "Josh Jackson",
-    "Luke Kennard",
-    "Maxi Kleber",
-    "Furkan Korkmaz",
-    "Luke Kornet",
-    "Kyle Kuzma",
-    "Lauri Markkanen",
-    "Donovan Mitchell",
-    "Malik Monk",
-    "Monte Morris",
-    "Frank Ntilikina",
-    "Royce O'Neale",
-    "Cedi Osman",
-    "Daniel Theis",
-    "Derrick White",
-    "Grayson Allen",
-    "Deandre Ayton",
-    "Marvin Bagley III",
-    "Mo Bamba",
-    "Keita Bates-Diop",
-    "Isaac Bonga",
-    "Mikal Bridges",
-    "Bruce Brown",
-    "Troy Brown Jr.",
-    "Jalen Brunson",
-    "Jevon Carter",
-    "Wendell Carter Jr.",
-    "Gary Clark",
-    "Hamidou Diallo",
-    "Luka Doncic",
-    "Wenyen Gabriel",
-    "Shai Gilgeous-Alexander",
-    "Devonte' Graham",
-    "Isaiah Hartenstein",
-    "Aaron Holiday",
-    "Kevin Huerter",
-    "Jaren Jackson Jr.",
-    "Kevin Knox II",
-    "Jordan McLaughlin",
-    "Chimezie Metu",
-    "Shake Milton",
-    "Svi Mykhailiuk",
-    "Kendrick Nunn",
-    "Josh Okogie",
-    "Theo Pinson",
-    "Michael Porter Jr.",
-    "Duncan Robinson",
-    "Mitchell Robinson",
-    "Collin Sexton",
-    "Landry Shamet",
-    "Anfernee Simons",
-    "Jarred Vanderbilt",
-    "Moritz Wagner",
-    "Lonnie Walker IV",
-    "Yuta Watanabe",
-    "Kenrich Williams",
-    "Robert Williams III",
-    "Trae Young",
-    "Gary Trent Jr.",
-    "Chris Chiozza",
-    "Arnoldas Kulboka",
-    "Gabe Vincent",
-    "Nickeil Alexander-Walker",
-    "RJ Barrett",
-    "Darius Bazley",
-    "Goga Bitadze",
-    "Bol Bol",
-    "Ignas Brazdeikis",
-    "Brandon Clarke",
-    "Nic Claxton",
-    "Jarrett Culver",
-    "Carsen Edwards",
-    "Bruno Fernando",
-    "Daniel Gafford",
-    "Darius Garland",
-    "Rui Hachimura",
-    "Jaxson Hayes",
-    "Tyler Herro",
-    "Talen Horton-Tucker",
-    "De'Andre Hunter",
-    "Ty Jerome",
-    "Cameron Johnson",
-    "Keldon Johnson",
-    "Romeo Langford",
-    "Nassir Little",
-    "Didi Louzada",
-    "Terance Mann",
-    "Cody Martin",
-    "Jalen McDaniels",
-    "Ja Morant",
-    "Jaylen Nowell",
-    "Chuma Okeke",
-    "Jordan Poole",
-    "Kevin Porter Jr.",
-    "Cam Reddish",
-    "Isaiah Roby",
-    "Matisse Thybulle",
-    "P.J. Washington",
-    "Quinndary Weatherspoon",
-    "Grant Williams",
-    "Zion Williamson",
-    "Dylan Windler",
-    "Max Strus",
-    "Oshae Brissett",
-    "Charlie Brown Jr.",
-    "Amir Coffey",
-    "Jaylen Hoard",
-    "Rayjon Tucker",
-    "Tyler Cook",
-    "John Konchar",
-    "Armoni Brooks",
-    "Devontae Cacok",
-    "Dean Wade",
-    "Javonte Green",
-    "Matt Thomas",
-    "Juwan Morgan",
-    "Keljin Blevins",
-    "Precious Achiuwa",
-    "Cole Anthony",
-    "Deni Avdija",
-    "Udoka Azubuike",
-    "LaMelo Ball",
-    "Desmond Bane",
-    "Saddiq Bey",
-    "Leandro Bolmaro",
-    "Facundo Campazzo",
-    "Vernon Carey Jr.",
-    "Anthony Edwards",
-    "CJ Elleby",
-    "Malik Fitts",
-    "Malachi Flynn",
-    "Trent Forrest",
-    "Anthony Gill",
-    "Josh Green",
-    "R.J. Hampton",
-    "Killian Hayes",
-    "Elijah Hughes",
-    "Isaiah Joe",
-    "Mason Jones",
-    "Tre Jones",
-    "Nathan Knight",
-    "Vit Krejci",
-    "Anthony Lamb",
-    "Saben Lee",
-    "Kira Lewis Jr.",
-    "Theo Maledon",
-    "Kenyon Martin Jr.",
-    "Skylar Mays",
-    "Jaden McDaniels",
-    "Aaron Nesmith",
-    "Zeke Nnaji",
-    "Jordan Nwora",
-    "Onyeka Okongwu",
-    "Isaac Okoro",
-    "Aleksej Pokusevski",
-    "Myles Powell",
-    "Payton Pritchard",
-    "Immanuel Quickley",
-    "Paul Reed",
-    "Nick Richards",
-    "Marko Simonovic",
-    "Jalen Smith",
-    "Xavier Sneed",
-    "Lamar Stevens",
-    "Isaiah Stewart",
-    "Jae'Sean Tate",
-    "Tyrell Terry",
-    "Brodric Thomas",
-    "Killian Tillie",
-    "Xavier Tillman",
-    "Obi Toppin",
-    "Devin Vassell",
-    "Patrick Williams",
-    "Cassius Winston",
-    "James Wiseman",
-    "Robert Woodard II",
-    "Naji Marshall",
-    "Trevelin Queen",
-    "Nate Hinton",
-    "Zavier Simpson",
-    "Omer Yurtseven",
-    "Santi Aldama",
-    "Dalano Banton",
-    "Scottie Barnes",
-    "Charles Bassey",
-    "Brandon Boston Jr.",
-    "James Bouknight",
-    "Chaundee Brown Jr.",
-    "Greg Brown III",
-    "Jared Butler",
-    "Justin Champagnie",
-    "Josh Christopher",
-    "Sharife Cooper",
-    "Cade Cunningham",
-    "Ayo Dosunmu",
-    "Chris Duarte",
-    "David Duke Jr.",
-    "Kessler Edwards",
-    "Usman Garuba",
-    "Luka Garza",
-    "Josh Giddey",
-    "Quentin Grimes",
-    "Sam Hauser",
-    "Bones Hyland",
-    "Isaiah Jackson",
-    "David Johnson",
-    "Jalen Johnson",
-    "Keon Johnson",
-    "Herbert Jones",
-    "Kai Jones",
-    "Georgios Kalaitzakis",
-    "Corey Kispert",
-    "Scottie Lewis",
-    "Isaiah Livers",
-    "Sandro Mamukelashvili",
-    "Tre Mann",
-    "Miles McBride",
-    "Davion Mitchell",
-    "Evan Mobley",
-    "Moses Moody",
-    "Trey Murphy III",
-    "Jamorko Pickett",
-    "Yves Pons",
-    "Joshua Primo",
-    "Neemias Queta",
-    "Austin Reaves",
-    "Jeremiah Robinson-Earl",
-    "Alperen Sengun",
-    "Day'Ron Sharpe",
-    "Jericho Sims",
-    "Jaden Springer",
-    "Jalen Suggs",
-    "Terry Taylor",
-    "Cam Thomas",
-    "JT Thor",
-    "Isaiah Todd",
-    "Franz Wagner",
-    "Ish Wainright",
-    "Duane Washington Jr.",
-    "Trendon Watford",
-    "Joe Wieskamp",
-    "Aaron Wiggins",
-    "Ziaire Williams",
-    "McKinley Wright IV",
-    "RJ Nembhard Jr.",
-    "Jordan Schakel",
-    "Javonte Smart",
-    "Jose Alvarado",
-    "Feron Hunt",
-    "Braxton Key",
-    "Daishen Nix",
-    "Moses Wright",
-    "Malcolm Hill",
-    "Xavier Moon",
-    "Brandon Williams",
-    "Lindy Waters III",
-    "Gabriel Lundberg",
-    "Justin Anderson",
-    "DeMarcus Cousins",
-    "Seth Curry",
-    "Kevin Durant",
-    "Danilo Gallinari",
-    "Jeff Green",
-    "Justin Holiday",
-    "Brandon Knight",
-    "Greg Monroe",
-    "Dejounte Murray",
-    "Kristaps Porzingis",
-    "Derrick Rose",
-    "Nik Stauskas",
-    "Lance Stephenson",
-    "Garrett Temple",
-    "Klay Thompson",
-    "P.J. Tucker",
-    "John Wall",
-    "Hassan Whiteside",
-    "Christian Wood"
+  "Steven Adams",
+  "LaMarcus Aldridge",
+  "Kyle Anderson",
+  "Giannis Antetokounmpo",
+  "Carmelo Anthony",
+  "D.J. Augustin",
+  "Harrison Barnes",
+  "Will Barton",
+  "Nicolas Batum",
+  "Kent Bazemore",
+  "Bradley Beal",
+  "Malik Beasley",
+  "Davis Bertans",
+  "Patrick Beverley",
+  "Bismack Biyombo",
+  "Nemanja Bjelica",
+  "Eric Bledsoe",
+  "Bojan Bogdanovic",
+  "Devin Booker",
+  "Avery Bradley",
+  "Malcolm Brogdon",
+  "Jaylen Brown",
+  "Reggie Bullock",
+  "Trey Burke",
+  "Alec Burks",
+  "Jimmy Butler",
+  "Kentavious Caldwell-Pope",
+  "Clint Capela",
+  "Marquese Chriss",
+  "Mike Conley",
+  "Pat Connaughton",
+  "Robert Covington",
+  "Jae Crowder",
+  "Stephen Curry",
+  "Anthony Davis",
+  "Ed Davis",
+  "Dewayne Dedmon",
+  "DeMar DeRozan",
+  "Gorgui Dieng",
+  "Spencer Dinwiddie",
+  "Goran Dragic",
+  "Wayne Ellington",
+  "Joel Embiid",
+  "Derrick Favors",
+  "Dorian Finney-Smith",
+  "Bryn Forbes",
+  "Evan Fournier",
+  "Rudy Gay",
+  "Paul George",
+  "Taj Gibson",
+  "Rudy Gobert",
+  "Aaron Gordon",
+  "Eric Gordon",
+  "Jerami Grant",
+  "Danny Green",
+  "Draymond Green",
+  "Blake Griffin",
+  "Tim Hardaway Jr.",
+  "James Harden",
+  "Maurice Harkless",
+  "Montrezl Harrell",
+  "Gary Harris",
+  "Joe Harris",
+  "Tobias Harris",
+  "Udonis Haslem",
+  "Gordon Hayward",
+  "Juancho Hernangomez",
+  "Willy Hernangomez",
+  "Buddy Hield",
+  "George Hill",
+  "Jrue Holiday",
+  "Richaun Holmes",
+  "Rodney Hood",
+  "Al Horford",
+  "Danuel House Jr.",
+  "Dwight Howard",
+  "Serge Ibaka",
+  "Andre Iguodala",
+  "Brandon Ingram",
+  "Kyrie Irving",
+  "Reggie Jackson",
+  "LeBron James",
+  "Stanley Johnson",
+  "Nikola Jokic",
+  "Damian Jones",
+  "Derrick Jones Jr.",
+  "Tyus Jones",
+  "DeAndre Jordan",
+  "Cory Joseph",
+  "Jeremy Lamb",
+  "Zach LaVine",
+  "Jake Layman",
+  "Alex Len",
+  "Kawhi Leonard",
+  "Caris LeVert",
+  "Kevon Looney",
+  "Brook Lopez",
+  "Robin Lopez",
+  "Kyle Lowry",
+  "Timothe Luwawu-Cabarrot",
+  "Trey Lyles",
+  "Boban Marjanovic",
+  "Wesley Matthews",
+  "CJ McCollum",
+  "T.J. McConnell",
+  "Doug McDermott",
+  "Rodney McGruder",
+  "Ben McLemore",
+  "Khris Middleton",
+  "Patty Mills",
+  "Paul Millsap",
+  "Marcus Morris Sr.",
+  "Markieff Morris",
+  "Jamal Murray",
+  "Mike Muscala",
+  "Larry Nance Jr.",
+  "Raul Neto",
+  "Georges Niang",
+  "Nerlens Noel",
+  "Jusuf Nurkic",
+  "Victor Oladipo",
+  "Kelly Olynyk",
+  "Kelly Oubre Jr.",
+  "Chris Paul",
+  "Cameron Payne",
+  "Elfrid Payton",
+  "Mason Plumlee",
+  "Jakob Poeltl",
+  "Otto Porter Jr.",
+  "Bobby Portis",
+  "Dwight Powell",
+  "Norman Powell",
+  "Taurean Prince",
+  "Julius Randle",
+  "Josh Richardson",
+  "Austin Rivers",
+  "Rajon Rondo",
+  "Terrence Ross",
+  "Terry Rozier",
+  "Ricky Rubio",
+  "Domantas Sabonis",
+  "Dario Saric",
+  "Tomas Satoransky",
+  "Dennis Schroder",
+  "Pascal Siakam",
+  "Ben Simmons",
+  "Marcus Smart",
+  "Ish Smith",
+  "Tony Snell",
+  "Isaiah Thomas",
+  "Tristan Thompson",
+  "Karl-Anthony Towns",
+  "Myles Turner",
+  "Jonas Valanciunas",
+  "Fred VanVleet",
+  "Nikola Vucevic",
+  "Kemba Walker",
+  "T.J. Warren",
+  "Andrew Wiggins",
+  "Lou Williams",
+  "Justise Winslow",
+  "Thaddeus Young",
+  "Ivica Zubac",
+  "Damion Lee",
+  "Ryan Arcidiacono",
+  "Alex Caruso",
+  "David Nwaba",
+  "Bam Adebayo",
+  "Jarrett Allen",
+  "OG Anunoby",
+  "Lonzo Ball",
+  "Khem Birch",
+  "Bogdan Bogdanovic",
+  "Chris Boucher",
+  "Tony Bradley",
+  "Dillon Brooks",
+  "Thomas Bryant",
+  "John Collins",
+  "De'Aaron Fox",
+  "Markelle Fultz",
+  "Josh Hart",
+  "Frank Jackson",
+  "Josh Jackson",
+  "Luke Kennard",
+  "Maxi Kleber",
+  "Furkan Korkmaz",
+  "Luke Kornet",
+  "Kyle Kuzma",
+  "Lauri Markkanen",
+  "Donovan Mitchell",
+  "Malik Monk",
+  "Monte Morris",
+  "Frank Ntilikina",
+  "Royce O'Neale",
+  "Cedi Osman",
+  "Daniel Theis",
+  "Derrick White",
+  "Grayson Allen",
+  "Deandre Ayton",
+  "Marvin Bagley III",
+  "Mo Bamba",
+  "Keita Bates-Diop",
+  "Isaac Bonga",
+  "Mikal Bridges",
+  "Bruce Brown",
+  "Troy Brown Jr.",
+  "Jalen Brunson",
+  "Jevon Carter",
+  "Wendell Carter Jr.",
+  "Gary Clark",
+  "Hamidou Diallo",
+  "Luka Doncic",
+  "Wenyen Gabriel",
+  "Shai Gilgeous-Alexander",
+  "Devonte' Graham",
+  "Isaiah Hartenstein",
+  "Aaron Holiday",
+  "Kevin Huerter",
+  "Jaren Jackson Jr.",
+  "Kevin Knox II",
+  "Jordan McLaughlin",
+  "Chimezie Metu",
+  "Shake Milton",
+  "Svi Mykhailiuk",
+  "Kendrick Nunn",
+  "Josh Okogie",
+  "Theo Pinson",
+  "Michael Porter Jr.",
+  "Duncan Robinson",
+  "Mitchell Robinson",
+  "Collin Sexton",
+  "Landry Shamet",
+  "Anfernee Simons",
+  "Jarred Vanderbilt",
+  "Moritz Wagner",
+  "Lonnie Walker IV",
+  "Yuta Watanabe",
+  "Kenrich Williams",
+  "Robert Williams III",
+  "Trae Young",
+  "Gary Trent Jr.",
+  "Chris Chiozza",
+  "Arnoldas Kulboka",
+  "Gabe Vincent",
+  "Nickeil Alexander-Walker",
+  "RJ Barrett",
+  "Darius Bazley",
+  "Goga Bitadze",
+  "Bol Bol",
+  "Ignas Brazdeikis",
+  "Brandon Clarke",
+  "Nic Claxton",
+  "Jarrett Culver",
+  "Bruno Fernando",
+  "Daniel Gafford",
+  "Darius Garland",
+  "Rui Hachimura",
+  "Jaxson Hayes",
+  "Tyler Herro",
+  "Talen Horton-Tucker",
+  "De'Andre Hunter",
+  "Ty Jerome",
+  "Cameron Johnson",
+  "Keldon Johnson",
+  "Romeo Langford",
+  "Nassir Little",
+  "Didi Louzada",
+  "Terance Mann",
+  "Cody Martin",
+  "Jalen McDaniels",
+  "Ja Morant",
+  "Jaylen Nowell",
+  "Chuma Okeke",
+  "Jordan Poole",
+  "Kevin Porter Jr.",
+  "Cam Reddish",
+  "Isaiah Roby",
+  "Matisse Thybulle",
+  "P.J. Washington",
+  "Quinndary Weatherspoon",
+  "Grant Williams",
+  "Zion Williamson",
+  "Dylan Windler",
+  "Max Strus",
+  "Oshae Brissett",
+  "Charlie Brown Jr.",
+  "Amir Coffey",
+  "Tyler Cook",
+  "John Konchar",
+  "Armoni Brooks",
+  "Devontae Cacok",
+  "Dean Wade",
+  "Javonte Green",
+  "Matt Thomas",
+  "Keljin Blevins",
+  "Precious Achiuwa",
+  "Cole Anthony",
+  "Deni Avdija",
+  "Udoka Azubuike",
+  "LaMelo Ball",
+  "Desmond Bane",
+  "Saddiq Bey",
+  "Leandro Bolmaro",
+  "Facundo Campazzo",
+  "Vernon Carey Jr.",
+  "Anthony Edwards",
+  "CJ Elleby",
+  "Malik Fitts",
+  "Malachi Flynn",
+  "Trent Forrest",
+  "Anthony Gill",
+  "Josh Green",
+  "R.J. Hampton",
+  "Killian Hayes",
+  "Elijah Hughes",
+  "Isaiah Joe",
+  "Mason Jones",
+  "Tre Jones",
+  "Nathan Knight",
+  "Vit Krejci",
+  "Saben Lee",
+  "Kira Lewis Jr.",
+  "Theo Maledon",
+  "Kenyon Martin Jr.",
+  "Skylar Mays",
+  "Jaden McDaniels",
+  "Aaron Nesmith",
+  "Zeke Nnaji",
+  "Jordan Nwora",
+  "Onyeka Okongwu",
+  "Isaac Okoro",
+  "Aleksej Pokusevski",
+  "Myles Powell",
+  "Payton Pritchard",
+  "Immanuel Quickley",
+  "Paul Reed",
+  "Nick Richards",
+  "Marko Simonovic",
+  "Jalen Smith",
+  "Xavier Sneed",
+  "Lamar Stevens",
+  "Isaiah Stewart",
+  "Jae'Sean Tate",
+  "Tyrell Terry",
+  "Brodric Thomas",
+  "Killian Tillie",
+  "Xavier Tillman",
+  "Obi Toppin",
+  "Devin Vassell",
+  "Patrick Williams",
+  "Cassius Winston",
+  "James Wiseman",
+  "Robert Woodard II",
+  "Naji Marshall",
+  "Trevelin Queen",
+  "Omer Yurtseven",
+  "Santi Aldama",
+  "Dalano Banton",
+  "Scottie Barnes",
+  "Charles Bassey",
+  "Brandon Boston Jr.",
+  "James Bouknight",
+  "Greg Brown III",
+  "Jared Butler",
+  "Justin Champagnie",
+  "Josh Christopher",
+  "Sharife Cooper",
+  "Cade Cunningham",
+  "Ayo Dosunmu",
+  "Chris Duarte",
+  "David Duke Jr.",
+  "Kessler Edwards",
+  "Usman Garuba",
+  "Luka Garza",
+  "Josh Giddey",
+  "Quentin Grimes",
+  "Sam Hauser",
+  "Bones Hyland",
+  "Isaiah Jackson",
+  "David Johnson",
+  "Jalen Johnson",
+  "Keon Johnson",
+  "Herbert Jones",
+  "Kai Jones",
+  "Corey Kispert",
+  "Scottie Lewis",
+  "Isaiah Livers",
+  "Sandro Mamukelashvili",
+  "Tre Mann",
+  "Miles McBride",
+  "Davion Mitchell",
+  "Evan Mobley",
+  "Moses Moody",
+  "Trey Murphy III",
+  "Jamorko Pickett",
+  "Yves Pons",
+  "Joshua Primo",
+  "Neemias Queta",
+  "Austin Reaves",
+  "Jeremiah Robinson-Earl",
+  "Alperen Sengun",
+  "Day'Ron Sharpe",
+  "Jericho Sims",
+  "Jaden Springer",
+  "Jalen Suggs",
+  "Terry Taylor",
+  "Cam Thomas",
+  "JT Thor",
+  "Isaiah Todd",
+  "Franz Wagner",
+  "Ish Wainright",
+  "Duane Washington Jr.",
+  "Trendon Watford",
+  "Joe Wieskamp",
+  "Aaron Wiggins",
+  "Ziaire Williams",
+  "McKinley Wright IV",
+  "RJ Nembhard Jr.",
+  "Javonte Smart",
+  "Jose Alvarado",
+  "Daishen Nix",
+  "Moses Wright",
+  "Malcolm Hill",
+  "Brandon Williams",
+  "Lindy Waters III",
+  "DeMarcus Cousins",
+  "Seth Curry",
+  "Kevin Durant",
+  "Danilo Gallinari",
+  "Jeff Green",
+  "Justin Holiday",
+  "Dejounte Murray",
+  "Kristaps Porzingis",
+  "Derrick Rose",
+  "Nik Stauskas",
+  "Lance Stephenson",
+  "Garrett Temple",
+  "Klay Thompson",
+  "P.J. Tucker",
+  "John Wall",
+  "Hassan Whiteside",
+  "Christian Wood",
+  "Zach Collins",
+  "Jonathan Isaac",
+  "Davon Reed",
+  "Haywood Highsmith",
+  "Admiral Schofield",
+  "Thanasis Antetokounmpo",
+  "Jason Preston",
+  "Miles Bridges",
+  "Sterling Brown",
+  "Vlatko Cancar",
+  "Jordan Clarkson",
+  "Torrey Craig",
+  "Terence Davis",
+  "Donte DiVincenzo",
+  "Luguentz Dort",
+  "Andre Drummond",
+  "JaMychal Green",
+  "Jalen Green",
+  "Tyrese Haliburton",
+  "Markus Howard",
+  "Joe Ingles",
+  "Jonathan Kuminga",
+  "Jock Landale",
+  "Damian Lillard",
+  "Kevin Love",
+  "Caleb Martin",
+  "Garrison Mathews",
+  "Tyrese Maxey",
+  "JaVale McGee",
+  "De'Anthony Melton",
+  "Eric Paschall",
+  "Gary Payton II",
+  "Naz Reid",
+  "D'Angelo Russell",
+  "Jay Scrubb",
+  "Jayson Tatum",
+  "Juan Toscano-Anderson",
+  "Russell Westbrook",
+  "Coby White",
+  "Lindell Wigginton",
+  "Delon Wright"
 ];
 
 function getAge(dateString) {
@@ -503,18 +527,16 @@ function getRandomPlayer(){
     let fn = window[pName];
     if(typeof fn === "function"){
         actual = fn();
-        if(actual.ppg < 12.0) getRandomPlayer();
+        if(actual.ppg < 7.0) getRandomPlayer();
     }
 }
 
 
 function getPlayer(guessName){
-    finishedFetching = false;
     let pName = guessName.replace(/\s/g, "").replace(/\'/g,'').replace(/\./g,'').replace(/\-/g,'');
     let fn = window[pName];
     if(typeof fn === "function"){
         guesses.push(fn());
-        finishedFetching = true;
     }
 }
 
@@ -564,7 +586,6 @@ const guesses = [];
 let canPlay = true;
 let currGuess = 0;
 let playersArray = [];
-let finishedFetching = false;
 
 
 window.onload = function(){
@@ -572,57 +593,38 @@ window.onload = function(){
 }
 
 function init(){
-    getRandomPlayer();
-    document.getElementById("modalHeader").innerText = "Who is this mystery player?";
-    document.getElementById("playerImage").style.filter = "brightness(0%)";
-    document.getElementById("playerImage").src = actual.img;
-    document.getElementById("message").remove()
-    document.querySelector(".guess").classList.remove("hidden");
-    document.querySelector(".btn").classList.remove("hidden");
-    createLabel();
-    document.querySelector(".guess").addEventListener("keydown", (e) => {
-        processInput(e);
-    });
-    document.querySelector(".close-modal").addEventListener("click",closeModal);
-    document.querySelector(".overlay").addEventListener("click", closeModal);
-    document.querySelector(".btn").addEventListener("click", openModal);
+  getRandomPlayer();
+  //console.log(actual);
+  document.getElementById("modalHeader").innerText = "Who is this mystery player?";
+  document.getElementById("playerImage").style.filter = "brightness(0%)";
+  document.getElementById("playerImage").src = actual.img;
+  document.getElementById("message").remove()
+  document.querySelector(".guess").classList.remove("hidden");
+  document.querySelector(".btn").classList.remove("hidden");
+  createLabel();
+  document.querySelector(".guess").addEventListener("keydown", (e) => {
+      processInput(e);
+  });
+  document.querySelector(".close-modal").addEventListener("click",closeModal);
+  document.querySelector(".overlay").addEventListener("click", closeModal);
+  document.querySelector(".btn").addEventListener("click", openModal);
 
-    document.querySelector(".guess").addEventListener("input", (e) => {
-        playersArray = [];
-        if(e.target.value){
-            playersArray = playerList.filter(p => p.toLowerCase().replace(/\s/g, "").replace(/\'/g,'').replace(/\./g,'').replace(/\-/g,'').includes(e.target.value.toLowerCase().replace(/\s/g, "").replace(/\'/g,'').replace(/\./g,'').replace(/\-/g,'')));
-            playersArray = playersArray.map(p => `<li><button class="option" onclick="clickGuess('${p}')">${p}</button></li>`);
-        }
-        showPlayersArray(playersArray.slice(0,5));
-    });
+  document.querySelector(".guess").addEventListener("input", (e) => {
+      playersArray = [];
+      if(e.target.value){
+          playersArray = playerList.filter(p => p.toLowerCase().replace(/\s/g,"").replace(/\'/g,'').replace(/\./g,'').replace(/\-/g,'').includes(e.target.value.toLowerCase().replace(/\s/g,"").replace(/\'/g,'').replace(/\./g,'').replace(/\-/g,'')));
+          playersArray = playersArray.map(p => `<li><button id="p${playersArray.indexOf(p)}" class="option" onclick="clickGuess('${p}')">${p}</button></li>`);
+      }
+      showPlayersArray(playersArray.slice(0,5));
+  });
 }
 
 function clickGuess(desired){
-    let guessedName = desired;
-    showPlayersArray([]);
-    document.querySelector(".guess").value = "";
-    document.querySelector(".guess").classList.add("locked");
-    document.querySelector(".guess").value = "Guessing...";
-    document.querySelector(".guess").readOnly = true;
-    getPlayer(guessedName);
-    if(finishedFetching){
-        guess();
-        if(canPlay){
-            document.querySelector(".guess").classList.remove("locked");
-            document.querySelector(".guess").value = "";
-            document.querySelector(".guess").readOnly = false;
-        }
-    }
-    else{
-        document.querySelector(".guess").classList.add("locked");
-        document.querySelector(".guess").value = "Invalid guess!";
-        document.querySelector(".guess").readOnly = true;
-        setTimeout(function(){
-            document.querySelector(".guess").classList.remove("locked");
-            document.querySelector(".guess").value = "";
-            document.querySelector(".guess").readOnly = false;
-        }, 1000);
-    }
+  let guessedName = desired;
+  showPlayersArray([]);
+  getPlayer(guessedName);
+  guess();
+  if(canPlay) document.querySelector(".guess").value = "";
 }
 
 function showPlayersArray(playersArray){
@@ -634,31 +636,54 @@ function processInput(e){
     if(canPlay === false) return;
 
     if(e.code == "Enter" && document.querySelector(".guess").value != "" && playersArray.length !== 0){ 
-        let guessedName = playersArray[0].slice(playersArray[0].indexOf(">",6) + 1, playersArray[0].indexOf("<",6));
-        showPlayersArray([]);
-        document.querySelector(".guess").value = "";
-        document.querySelector(".guess").classList.add("locked");
-        document.querySelector(".guess").value = "Guessing...";
-        document.querySelector(".guess").readOnly = true;
-        getPlayer(guessedName);
-        if(finishedFetching){
-            guess();
-            if(canPlay){
-                document.querySelector(".guess").classList.remove("locked");
-                document.querySelector(".guess").value = "";
-                document.querySelector(".guess").readOnly = false;
-            }
+      let guessedName;
+      if(document.querySelector(".selected") == null){
+        guessedName = playersArray[0].slice(playersArray[0].indexOf(">",6) + 1, playersArray[0].indexOf("<",6));
+      }
+      else{
+        let selectedId = Number(document.querySelector(".selected").id.slice(1,2));
+        guessedName = playersArray[selectedId].slice(playersArray[selectedId].indexOf(">",6) + 1, playersArray[selectedId].indexOf("<",6));
+      }
+      showPlayersArray([]);
+      getPlayer(guessedName);
+      guess();
+      if(canPlay) document.querySelector(".guess").value = "";
+    }
+
+    if(e.code == "ArrowDown" && document.querySelector(".guess").value != "" && playersArray.length !== 0){
+      if(document.querySelector(".selected") == null){
+        document.getElementById("p0").classList.add("selected");
+      }
+      else{
+        if(document.querySelector(".selected").id == "p4"){
+          document.getElementById("p4").classList.remove("selected");
+          document.getElementById("p0").classList.add("selected");
         }
         else{
-            document.querySelector(".guess").classList.add("locked");
-            document.querySelector(".guess").value = "Invalid guess!";
-            document.querySelector(".guess").readOnly = true;
-            setTimeout(function(){
-                document.querySelector(".guess").classList.remove("locked");
-                document.querySelector(".guess").value = "";
-                document.querySelector(".guess").readOnly = false;
-            }, 1000);
+          let currId = document.querySelector(".selected").id;
+          let newId = "p" + (Number(currId.slice(1,2)) + 1).toString();
+          document.getElementById(currId).classList.remove("selected");
+          document.getElementById(newId).classList.add("selected");
         }
+      }
+    }
+
+    if(e.code == "ArrowUp" && document.querySelector(".guess").value != "" && playersArray.length !== 0){
+      if(document.querySelector(".selected") == null){
+        document.getElementById("p4").classList.add("selected");
+      }
+      else{
+        if(document.querySelector(".selected").id == "p0"){
+          document.getElementById("p0").classList.remove("selected");
+          document.getElementById("p4").classList.add("selected");
+        }
+        else{
+          let currId = document.querySelector(".selected").id;
+          let newId = "p" + (Number(currId.slice(1,2)) - 1).toString();
+          document.getElementById(currId).classList.remove("selected");
+          document.getElementById(newId).classList.add("selected");
+        }
+      }
     }
 }
 
@@ -687,9 +712,31 @@ function guess(){
         if(guessed.division === actual.division) document.getElementById(`${currGuess}-3`).classList.add("correct");
 
         //POSITION
+        let pos = guessed.position;
         document.getElementById(`${currGuess}-4`).innerText = guessed.position;
         if(guessed.position === actual.position) document.getElementById(`${currGuess}-4`).classList.add("correct");
-        else if(actual.position.includes(guessed.position) || guessed.position.includes(actual.position)) document.getElementById(`${currGuess}-4`).classList.add("present");
+        else{
+          if(actual.position === "G")
+            if(pos === "G-F" || pos === "F-G") document.getElementById(`${currGuess}-4`).classList.add("present");
+          
+          if(actual.position === "F")
+            if(pos === "G-F" || pos === "F-G" || pos === "F-C" || pos === "C-F") document.getElementById(`${currGuess}-4`).classList.add("present");
+
+          if(actual.position === "C")
+            if(pos === "C-F" || pos === "F-C") document.getElementById(`${currGuess}-4`).classList.add("present");
+          
+          if(actual.position === "G-F")
+            if(pos === "F-G" || pos === "G" || pos === "F") document.getElementById(`${currGuess}-4`).classList.add("present");
+
+          if(actual.position === "F-G")
+            if(pos === "G-F" || pos === "G" || pos === "F") document.getElementById(`${currGuess}-4`).classList.add("present");
+
+          if(actual.position === "F-C")
+            if(pos === "C-F" || pos === "C" || pos === "F") document.getElementById(`${currGuess}-4`).classList.add("present");
+
+          if(actual.position === "C-F")
+            if(pos === "F-C" || pos === "C" || pos === "F") document.getElementById(`${currGuess}-4`).classList.add("present");
+        }
 
         //HEIGHT
         let heightDif = guessed.heightInches - actual.heightInches;
@@ -2422,6 +2469,159 @@ function ZachLaVine() {
       conference: "East",
       division: "Cen."
     };
+}
+
+function ZachCollins() {
+  return {
+    name: "Zach Collins",
+    position: "F-C",
+    height: `6'11"`,
+    heightInches: 83,
+    age: 24,
+    number: "23",
+    ppg: 6,
+    fullTeamName: "San Antonio Spurs",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4066650.png",
+    team: "SAS",
+    conference: "West",
+    division: "SW"
+  };
+}
+
+function JonathanIsaac() {
+  return {
+    name: "Jonathan Isaac",
+    position: "F",
+    height: `6'10"`,
+    heightInches: 82,
+    age: 24,
+    number: "1",
+    ppg: 9.3,
+    fullTeamName: "Orlando Magic",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4065654.png",
+    team: "ORL",
+    conference: "East",
+    division: "SE"
+  };
+}
+
+function DavonReed() {
+  return {
+    name: "Davon Reed",
+    position: "G",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 26,
+    number: "9",
+    ppg: 3.6,
+    fullTeamName: "Denver Nuggets",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3059262.png",
+    team: "DEN",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function MelvinFrazierJr() {
+  return {
+    name: "Melvin Frazier Jr.",
+    position: "G-F",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 25,
+    number: "6",
+    ppg: 2.7,
+    fullTeamName: "Oklahoma City Thunder",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3913546.png",
+    team: "OKC",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function HaywoodHighsmith() {
+  return {
+    name: "Haywood Highsmith",
+    position: "F",
+    height: `6'4"`,
+    heightInches: 76,
+    age: 25,
+    number: "24",
+    ppg: 2.2,
+    fullTeamName: "Miami Heat",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4291678.png",
+    team: "MIA",
+    conference: "East",
+    division: "SE"
+  };
+}
+
+function AdmiralSchofield() {
+  return {
+    name: "Admiral Schofield",
+    position: "F",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 25,
+    number: "25",
+    ppg: 3.5,
+    fullTeamName: "Orlando Magic",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3918423.png",
+    team: "ORL",
+    conference: "East",
+    division: "SE"
+  };
+}
+
+function ThanasisAntetokounmpo() {
+  return {
+    name: "Thanasis Antetokounmpo",
+    position: "F",
+    height: `6'6"`,
+    heightInches: 78,
+    age: 29,
+    number: "43",
+    ppg: 3.1,
+    fullTeamName: "Milwaukee Bucks",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3102533.png",
+    team: "MIL",
+    conference: "East",
+    division: "Cen."
+  };
+}
+
+function LucaVildoza() {
+  return {
+    name: "Luca Vildoza",
+    position: "G",
+    height: `6'3"`,
+    heightInches: 75,
+    age: 26,
+    number: "6",
+    ppg: 0,
+    fullTeamName: "Milwaukee Bucks",
+    img: "null",
+    team: "MIL",
+    conference: "East",
+    division: "Cen."
+  };
+}
+
+function JasonPreston() {
+  return {
+    name: "Jason Preston",
+    position: "G",
+    height: `6'3"`,
+    heightInches: 75,
+    age: 22,
+    number: "17",
+    ppg: 0,
+    fullTeamName: "LA Clippers",
+    img: "null",
+    team: "LAC",
+    conference: "West",
+    division: "Pac."
+  };
 }
 
 function JakeLayman() {
@@ -5178,23 +5378,6 @@ function JarrettCulver() {
     };
 }
 
-function CarsenEdwards() {
-    return {
-      name: "Carsen Edwards",
-      position: "G",
-      height: `5'11"`,
-      heightInches: 71,
-      age: 24,
-      number: "4",
-      ppg: 3.7,
-      fullTeamName: "Detroit Pistons",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4066407.png",
-      team: "DET",
-      conference: "East",
-      division: "Cen."
-    };
-}
-
 function BrunoFernando() {
     return {
       name: "Bruno Fernando",
@@ -5773,40 +5956,6 @@ function AmirCoffey() {
     };
 }
 
-function JaylenHoard() {
-    return {
-      name: "Jaylen Hoard",
-      position: "F",
-      height: `6'8"`,
-      heightInches: 80,
-      age: 23,
-      number: "8",
-      ppg: 6.6,
-      fullTeamName: "Oklahoma City Thunder",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4395688.png",
-      team: "OKC",
-      conference: "West",
-      division: "NW"
-    };
-}
-
-function RayjonTucker() {
-    return {
-      name: "Rayjon Tucker",
-      position: "G",
-      height: `6'3"`,
-      heightInches: 75,
-      age: 24,
-      number: "59",
-      ppg: 3,
-      fullTeamName: "Milwaukee Bucks",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3908819.png",
-      team: "MIL",
-      conference: "East",
-      division: "Cen."
-    };
-}
-
 function TylerCook() {
     return {
       name: "Tyler Cook",
@@ -5923,23 +6072,6 @@ function MattThomas() {
       team: "CHI",
       conference: "East",
       division: "Cen."
-    };
-}
-
-function JuwanMorgan() {
-    return {
-      name: "Juwan Morgan",
-      position: "F",
-      height: `6'7"`,
-      heightInches: 79,
-      age: 25,
-      number: "16",
-      ppg: 1.5,
-      fullTeamName: "Boston Celtics",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3934721.png",
-      team: "BOS",
-      conference: "East",
-      division: "Atl."
     };
 }
 
@@ -6382,23 +6514,6 @@ function VitKrejci() {
       team: "OKC",
       conference: "West",
       division: "NW"
-    };
-}
-
-function AnthonyLamb() {
-    return {
-      name: "Anthony Lamb",
-      position: "F",
-      height: `6'6"`,
-      heightInches: 78,
-      age: 24,
-      number: "33",
-      ppg: 5.1,
-      fullTeamName: "Houston Rockets",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4066790.png",
-      team: "HOU",
-      conference: "West",
-      division: "SW"
     };
 }
 
@@ -6997,40 +7112,6 @@ function TrevelinQueen() {
     };
 }
 
-function NateHinton() {
-    return {
-      name: "Nate Hinton",
-      position: "G-F",
-      height: `6'5"`,
-      heightInches: 77,
-      age: 22,
-      number: "14",
-      ppg: 1.8,
-      fullTeamName: "Indiana Pacers",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4396629.png",
-      team: "IND",
-      conference: "East",
-      division: "Cen."
-    };
-}
-
-function ZavierSimpson() {
-    return {
-      name: "Zavier Simpson",
-      position: "G",
-      height: `6'0"`,
-      heightInches: 72,
-      age: 25,
-      number: "9",
-      ppg: 11,
-      fullTeamName: "Oklahoma City Thunder",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4066377.png",
-      team: "OKC",
-      conference: "West",
-      division: "NW"
-    };
-}
-
 function OmerYurtseven() {
     return {
       name: "Omer Yurtseven",
@@ -7145,23 +7226,6 @@ function JamesBouknight() {
       fullTeamName: "Charlotte Hornets",
       img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4431712.png",
       team: "CHA",
-      conference: "East",
-      division: "SE"
-    };
-}
-
-function ChaundeeBrownJr() {
-    return {
-      name: "Chaundee Brown Jr.",
-      position: "F",
-      height: `6'5"`,
-      heightInches: 77,
-      age: 23,
-      number: "38",
-      ppg: 6.2,
-      fullTeamName: "Atlanta Hawks",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4278045.png",
-      team: "ATL",
       conference: "East",
       division: "SE"
     };
@@ -7538,23 +7602,6 @@ function KaiJones() {
       team: "CHA",
       conference: "East",
       division: "SE"
-    };
-}
-
-function GeorgiosKalaitzakis() {
-    return {
-      name: "Georgios Kalaitzakis",
-      position: "F",
-      height: `6'7"`,
-      heightInches: 79,
-      age: 23,
-      number: "18",
-      ppg: 6.6,
-      fullTeamName: "Oklahoma City Thunder",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4683022.png",
-      team: "OKC",
-      conference: "West",
-      division: "NW"
     };
 }
 
@@ -8136,23 +8183,6 @@ function RJNembhardJr() {
     };
 }
 
-function JordanSchakel() {
-    return {
-      name: "Jordan Schakel",
-      position: "G",
-      height: `6'6"`,
-      heightInches: 78,
-      age: 23,
-      number: "20",
-      ppg: 1.3,
-      fullTeamName: "Washington Wizards",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4278707.png",
-      team: "WAS",
-      conference: "East",
-      division: "SE"
-    };
-}
-
 function JavonteSmart() {
     return {
       name: "Javonte Smart",
@@ -8184,40 +8214,6 @@ function JoseAlvarado() {
       team: "NOP",
       conference: "West",
       division: "SW"
-    };
-}
-
-function FeronHunt() {
-    return {
-      name: "Feron Hunt",
-      position: "F",
-      height: `6'8"`,
-      heightInches: 80,
-      age: 22,
-      number: "11",
-      ppg: 0,
-      fullTeamName: "New York Knicks",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4396638.png",
-      team: "NYK",
-      conference: "East",
-      division: "Atl."
-    };
-}
-
-function BraxtonKey() {
-    return {
-      name: "Braxton Key",
-      position: "F",
-      height: `6'8"`,
-      heightInches: 80,
-      age: 25,
-      number: "17",
-      ppg: 7.2,
-      fullTeamName: "Detroit Pistons",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4066240.png",
-      team: "DET",
-      conference: "East",
-      division: "Cen."
     };
 }
 
@@ -8272,23 +8268,6 @@ function MalcolmHill() {
     };
 }
 
-function XavierMoon() {
-    return {
-      name: "Xavier Moon",
-      position: "G",
-      height: `6'2"`,
-      heightInches: 74,
-      age: 27,
-      number: "15",
-      ppg: 5.8,
-      fullTeamName: "LA Clippers",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3914075.png",
-      team: "LAC",
-      conference: "West",
-      division: "Pac."
-    };
-}
-
 function BrandonWilliams() {
     return {
       name: "Brandon Williams",
@@ -8320,40 +8299,6 @@ function LindyWatersIII() {
       team: "OKC",
       conference: "West",
       division: "NW"
-    };
-}
-
-function GabrielLundberg() {
-    return {
-      name: "Gabriel Lundberg",
-      position: "G",
-      height: `6'4"`,
-      heightInches: 76,
-      age: 27,
-      number: "19",
-      ppg: 3.3,
-      fullTeamName: "Phoenix Suns",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4981257.png",
-      team: "PHX",
-      conference: "West",
-      division: "Pac."
-    };
-}
-
-function JustinAnderson() {
-    return {
-      name: "Justin Anderson",
-      position: "F-G",
-      height: `6'5"`,
-      heightInches: 77,
-      age: 28,
-      number: "10",
-      ppg: 5.3,
-      fullTeamName: "Indiana Pacers",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2982340.png",
-      team: "IND",
-      conference: "East",
-      division: "Cen."
     };
 }
 
@@ -8456,40 +8401,6 @@ function JustinHoliday() {
       team: "SAC",
       conference: "West",
       division: "Pac."
-    };
-}
-
-function BrandonKnight() {
-    return {
-      name: "Brandon Knight",
-      position: "G",
-      height: `6'2"`,
-      heightInches: 74,
-      age: 30,
-      number: "20",
-      ppg: 14,
-      fullTeamName: "Dallas Mavericks",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6448.png",
-      team: "DAL",
-      conference: "West",
-      division: "SW"
-    };
-}
-
-function GregMonroe() {
-    return {
-      name: "Greg Monroe",
-      position: "F-C",
-      height: `6'10"`,
-      heightInches: 82,
-      age: 31,
-      number: "15",
-      ppg: 13,
-      fullTeamName: "Minnesota Timberwolves",
-      img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4260.png",
-      team: "MIN",
-      conference: "West",
-      division: "NW"
     };
 }
 
@@ -8678,5 +8589,583 @@ function ChristianWood() {
       conference: "West",
       division: "SW"
     };
+}
+
+function MilesBridges() {
+  return {
+    name: "Miles Bridges",
+    position: "F",
+    height: `6'7"`,
+    heightInches: 79,
+    age: 24,
+    number: "0",
+    ppg: 20.2,
+    fullTeamName: "Charlotte Hornets",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4066383.png",
+    team: "CHA",
+    conference: "East",
+    division: "SE"
+  };
+}
+
+function SterlingBrown() {
+  return {
+    name: "Sterling Brown",
+    position: "G-F",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 27,
+    number: "0",
+    ppg: 3.3,
+    fullTeamName: "Dallas Mavericks",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3057187.png",
+    team: "DAL",
+    conference: "West",
+    division: "SW"
+  };
+}
+
+function VlatkoCancar() {
+  return {
+    name: "Vlatko Cancar",
+    position: "F",
+    height: `6'8"`,
+    heightInches: 80,
+    age: 25,
+    number: "31",
+    ppg: 4.1,
+    fullTeamName: "Denver Nuggets",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4230557.png",
+    team: "DEN",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function JordanClarkson() {
+  return {
+    name: "Jordan Clarkson",
+    position: "G",
+    height: `6'4"`,
+    heightInches: 76,
+    age: 29,
+    number: "00",
+    ppg: 16.0,
+    fullTeamName: "Utah Jazz",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2528426.png",
+    team: "UTA",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function TorreyCraig() {
+  return {
+    name: "Torrey Craig",
+    position: "F",
+    height: `6'7"`,
+    heightInches: 79,
+    age: 31,
+    number: "0",
+    ppg: 6.9,
+    fullTeamName: "Phoenix Suns",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2528693.png",
+    team: "PHX",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function TerenceDavis() {
+  return {
+    name: "Terence Davis",
+    position: "G",
+    height: `6'4"`,
+    heightInches: 76,
+    age: 25,
+    number: "3",
+    ppg: 10.4,
+    fullTeamName: "Sacramento Kings",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3919454.png",
+    team: "SAC",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function DonteDiVincenzo() {
+  return {
+    name: "Donte DiVincenzo",
+    position: "G",
+    height: `6'4"`,
+    heightInches: 76,
+    age: 25,
+    number: "0",
+    ppg: 10.3,
+    fullTeamName: "Sacramento Kings",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3934673.png",
+    team: "SAC",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function LuguentzDort() {
+  return {
+    name: "Luguentz Dort",
+    position: "G",
+    height: `6'3"`,
+    heightInches: 75,
+    age: 23,
+    number: "5",
+    ppg: 17.2,
+    fullTeamName: "Oklahoma City Thunder",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4397020.png",
+    team: "OKC",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function AndreDrummond() {
+  return {
+    name: "Andre Drummond",
+    position: "C",
+    height: `6'10"`,
+    heightInches: 82,
+    age: 28,
+    number: "0",
+    ppg: 11.8,
+    fullTeamName: "Brooklyn Nets",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6585.png",
+    team: "BKN",
+    conference: "East",
+    division: "Atl."
+  };
+}
+
+function JaMychalGreen() {
+  return {
+    name: "JaMychal Green",
+    position: "F-C",
+    height: `6'8"`,
+    heightInches: 80,
+    age: 31,
+    number: "0",
+    ppg: 6.4,
+    fullTeamName: "Denver Nuggets",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2327577.png",
+    team: "DEN",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function JalenGreen() {
+  return {
+    name: "Jalen Green",
+    position: "G",
+    height: `6'4"`,
+    heightInches: 76,
+    age: 20,
+    number: "0",
+    ppg: 17.3,
+    fullTeamName: "Houston Rockets",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4437244.png",
+    team: "HOU",
+    conference: "West",
+    division: "SW"
+  };
+}
+
+function TyreseHaliburton() {
+  return {
+    name: "Tyrese Haliburton",
+    position: "G",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 22,
+    number: "0",
+    ppg: 17.5,
+    fullTeamName: "Indiana Pacers",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4396993.png",
+    team: "IND",
+    conference: "East",
+    division: "Cen."
+  };
+}
+
+function MarkusHoward() {
+  return {
+    name: "Markus Howard",
+    position: "G",
+    height: `5'10"`,
+    heightInches: 70,
+    age: 23,
+    number: "00",
+    ppg: 4.1,
+    fullTeamName: "Denver Nuggets",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4065805.png",
+    team: "DEN",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function JoeIngles() {
+  return {
+    name: "Joe Ingles",
+    position: "F-G",
+    height: `6'8"`,
+    heightInches: 80,
+    age: 34,
+    number: "00",
+    ppg: 7.2,
+    fullTeamName: "Portland Trail Blazers",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/2968436.png",
+    team: "POR",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function JonathanKuminga() {
+  return {
+    name: "Jonathan Kuminga",
+    position: "F",
+    height: `6'7"`,
+    heightInches: 79,
+    age: 19,
+    number: "00",
+    ppg: 9.3,
+    fullTeamName: "Golden State Warriors",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4433247.png",
+    team: "GSW",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function JockLandale() {
+  return {
+    name: "Jock Landale",
+    position: "C",
+    height: `6'11"`,
+    heightInches: 83,
+    age: 26,
+    number: "34",
+    ppg: 4.9,
+    fullTeamName: "San Antonio Spurs",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3146557.png",
+    team: "SAS",
+    conference: "West",
+    division: "SW"
+  };
+}
+
+function DamianLillard() {
+  return {
+    name: "Damian Lillard",
+    position: "G",
+    height: `6'2"`,
+    heightInches: 74,
+    age: 31,
+    number: "0",
+    ppg: 24.0,
+    fullTeamName: "Portland Trail Blazers",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6606.png",
+    team: "POR",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function KevinLove() {
+  return {
+    name: "Kevin Love",
+    position: "F-C",
+    height: `6'8"`,
+    heightInches: 80,
+    age: 33,
+    number: "0",
+    ppg: 13.6,
+    fullTeamName: "Cleveland Cavaliers",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3449.png",
+    team: "CLE",
+    conference: "East",
+    division: "Cen."
+  };
+}
+
+function CalebMartin() {
+  return {
+    name: "Caleb Martin",
+    position: "F",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 26,
+    number: "16",
+    ppg: 9.2,
+    fullTeamName: "Miami Heat",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3138160.png",
+    team: "MIA",
+    conference: "East",
+    division: "SE"
+  };
+}
+
+function GarrisonMathews() {
+  return {
+    name: "Garrison Mathews",
+    position: "G",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 25,
+    number: "25",
+    ppg: 10.0,
+    fullTeamName: "Houston Rockets",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3913180.png",
+    team: "HOU",
+    conference: "West",
+    division: "SW"
+  };
+}
+
+function TyreseMaxey() {
+  return {
+    name: "Tyrese Maxey",
+    position: "G",
+    height: `6'2"`,
+    heightInches: 74,
+    age: 21,
+    number: "0",
+    ppg: 17.5,
+    fullTeamName: "Philadelphia 76ers",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4431678.png",
+    team: "PHI",
+    conference: "East",
+    division: "Atl."
+  };
+}
+
+function JaValeMcGee() {
+  return {
+    name: "JaVale McGee",
+    position: "C-F",
+    height: `7'0"`,
+    heightInches: 84,
+    age: 34,
+    number: "00",
+    ppg: 9.2,
+    fullTeamName: "Phoenix Suns",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3452.png",
+    team: "PHX",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function DeAnthonyMelton() {
+  return {
+    name: "De'Anthony Melton",
+    position: "G",
+    height: `6'2"`,
+    heightInches: 74,
+    age: 23,
+    number: "0",
+    ppg: 10.8,
+    fullTeamName: "Memphis Grizzlies",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4066436.png",
+    team: "MEM",
+    conference: "West",
+    division: "SW"
+  };
+}
+
+function EricPaschall() {
+  return {
+    name: "Eric Paschall",
+    position: "F",
+    height: `6'6"`,
+    heightInches: 78,
+    age: 25,
+    number: "0",
+    ppg: 5.8,
+    fullTeamName: "Utah Jazz",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3133817.png",
+    team: "UTA",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function GaryPaytonII() {
+  return {
+    name: "Gary Payton II",
+    position: "G",
+    height: `6'3"`,
+    heightInches: 75,
+    age: 29,
+    number: "0",
+    ppg: 7.1,
+    fullTeamName: "Golden State Warriors",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3134903.png",
+    team: "GSW",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function NazReid() {
+  return {
+    name: "Naz Reid",
+    position: "C-F",
+    height: `6'9"`,
+    heightInches: 81,
+    age: 22,
+    number: "11",
+    ppg: 8.3,
+    fullTeamName: "Minnesota Timberwolves",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4396971.png",
+    team: "MIN",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function DAngeloRussell() {
+  return {
+    name: "D'Angelo Russell",
+    position: "G",
+    height: `6'4"`,
+    heightInches: 76,
+    age: 26,
+    number: "0",
+    ppg: 18.1,
+    fullTeamName: "Minnesota Timberwolves",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3136776.png",
+    team: "MIN",
+    conference: "West",
+    division: "NW"
+  };
+}
+
+function JayScrubb() {
+  return {
+    name: "Jay Scrubb",
+    position: "G",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 21,
+    number: "0",
+    ppg: 2.7,
+    fullTeamName: "LA Clippers",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4683023.png",
+    team: "LAC",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function JaysonTatum() {
+  return {
+    name: "Jayson Tatum",
+    position: "F-G",
+    height: `6'8"`,
+    heightInches: 80,
+    age: 24,
+    number: "0",
+    ppg: 26.9,
+    fullTeamName: "Boston Celtics",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4065648.png",
+    team: "BOS",
+    conference: "East",
+    division: "Atl."
+  };
+}
+
+function JuanToscanoAnderson() {
+  return {
+    name: "Juan Toscano-Anderson",
+    position: "F",
+    height: `6'6"`,
+    heightInches: 78,
+    age: 29,
+    number: "95",
+    ppg: 4.1,
+    fullTeamName: "Golden State Warriors",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4401416.png",
+    team: "GSW",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function RussellWestbrook() {
+  return {
+    name: "Russell Westbrook",
+    position: "G",
+    height: `6'3"`,
+    heightInches: 75,
+    age: 33,
+    number: "0",
+    ppg: 18.5,
+    fullTeamName: "Los Angeles Lakers",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3468.png",
+    team: "LAL",
+    conference: "West",
+    division: "Pac."
+  };
+}
+
+function CobyWhite() {
+  return {
+    name: "Coby White",
+    position: "G",
+    height: `6'4"`,
+    heightInches: 76,
+    age: 22,
+    number: "0",
+    ppg: 12.7,
+    fullTeamName: "Chicago Bulls",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4395651.png",
+    team: "CHI",
+    conference: "East",
+    division: "Cen."
+  };
+}
+
+function LindellWigginton() {
+  return {
+    name: "Lindell Wigginton",
+    position: "G",
+    height: `6'2"`,
+    heightInches: 74,
+    age: 24,
+    number: "28",
+    ppg: 4.2,
+    fullTeamName: "Milwaukee Bucks",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4277887.png",
+    team: "MIL",
+    conference: "East",
+    division: "Cen."
+  };
+}
+
+function DelonWright() {
+  return {
+    name: "Delon Wright",
+    position: "G",
+    height: `6'5"`,
+    heightInches: 77,
+    age: 30,
+    number: "0",
+    ppg: 4.4,
+    fullTeamName: "Atlanta Hawks",
+    img: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3064447.png",
+    team: "ATL",
+    conference: "East",
+    division: "SE"
+  };
 }
 
